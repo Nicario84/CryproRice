@@ -70,6 +70,7 @@ This creates `data/public_key.json` and `data/private_key.json`. The public key 
 7. Update `CONTRACT_ADDRESS` in `frontend/app.js` and `crypto/export_ballots.py`
 
 ### 3. Start the Frontend
+**Option A — Local server:**
 
 ```bash
 cd frontend
@@ -77,6 +78,9 @@ python3 -m http.server 8000
 ```
 
 Open http://localhost:8000 in a browser with MetaMask installed.
+
+**Option B — Hosted page:**
+You can also access the frontend directly at: https://u236098.github.io/VOTEPAGE/
 
 ### 4. Vote
 
