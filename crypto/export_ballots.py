@@ -6,7 +6,7 @@ from web3 import Web3
 # =========================
 
 RPC_URL = "https://sepolia.infura.io/v3/4f55ca0ce3724047ba7fa5a5ba848467"
-CONTRACT_ADDRESS = "0x2c4cE1262544CFD951EBcd94EdA56225A69b65dF"
+CONTRACT_ADDRESS = "0x2C7059d38452682f9E3F22a216DE1e257fA0Eed8"
 
 # Minimal ABI needed for export
 CONTRACT_ABI = [
