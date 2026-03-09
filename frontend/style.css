@@ -1,14 +1,213 @@
+/* ── Color palette ─────────────────────────────────────────── */
+:root {
+    --primary-dark:   #0d1b2a;
+    --secondary-dark: #1b2838;
+    --accent:         #00b4d8;
+    --accent-hover:   #0891b2;
+    --card-bg:        #ffffff;
+    --card-text:      #1e293b;
+    --body-text-dark: #e2e8f0;
+    --subtle-border:  #e5e7eb;
+}
+
+/* ── Base ───────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
 body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    background: var(--primary-dark);
+    color: var(--body-text-dark);
     margin: 0;
     padding: 0;
+    min-height: 100vh;
 }
-#app {
-    max-width: 600px;
-    margin: 40px auto;
-    background: #fff;
-    padding: 24px;
+
+/* ── Hero / header ──────────────────────────────────────────── */
+.hero {
+    background: var(--primary-dark);
+    text-align: center;
+    padding: 48px 24px 36px;
+    border-bottom: 3px solid var(--accent);
+}
+
+.hero h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 8px;
+    letter-spacing: 0.02em;
+}
+
+.hero .subtitle {
+    font-size: 1rem;
+    color: var(--accent);
+    margin: 0;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* ── Container ──────────────────────────────────────────────── */
+.container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 16px 48px;
+}
+
+/* ── Cards ──────────────────────────────────────────────────── */
+.card {
+    background: var(--card-bg);
+    color: var(--card-text);
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+    padding: 24px 28px;
+    margin-bottom: 24px;
+    transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: 0 6px 24px rgba(0, 180, 216, 0.15);
+}
+
+.card h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--card-text);
+    margin: 0 0 18px;
+    padding-bottom: 10px;
+    border-left: 4px solid var(--accent);
+    padding-left: 12px;
+}
+
+/* ── Typography inside cards ────────────────────────────────── */
+.card p {
+    margin: 8px 0;
+    color: var(--card-text);
+    line-height: 1.6;
+}
+
+.card strong {
+    color: var(--secondary-dark);
+}
+
+/* ── Buttons ────────────────────────────────────────────────── */
+button {
+    background: var(--accent);
+    color: #ffffff;
+    border: none;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 10px 22px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+    margin: 4px 4px 12px 0;
+}
+
+button:hover {
+    background: var(--accent-hover);
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* ── Form elements ──────────────────────────────────────────── */
+label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--card-text);
+    margin: 12px 0 6px;
+}
+
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid var(--subtle-border);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--card-text);
+    background: #f8fafc;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 12px;
+}
+
+input[type="number"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.15);
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* ── Message types ──────────────────────────────────────────── */
+#messages {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.msg-info {
+    background: #e0f7fa;
+    color: #006064;
+    border-left: 4px solid var(--accent);
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+}
+
+.msg-success {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border-left: 4px solid #43a047;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+}
+
+.msg-error {
+    background: #fdecea;
+    color: #b71c1c;
+    border-left: 4px solid #e53935;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+}
+
+/* ── Vote options / candidate list ──────────────────────────── */
+#voteOptions,
+#candidateList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+/* ── Results section ────────────────────────────────────────── */
+#resultsList {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 20px 12px 40px;
+    }
+
+    .card {
+        padding: 18px 16px;
+    }
 }
