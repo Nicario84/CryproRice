@@ -1,0 +1,12 @@
+{
+    "candidates": [
+        "Alice",
+        "Bob",
+        "Charlie"
+    ],
+    "finalCounts": [
+        0,
+        1,
+        0
+    ]
+}

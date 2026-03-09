@@ -1,0 +1,14 @@
+{
+    "candidates": [
+        "Alice",
+        "Bob",
+        "Charlie"
+    ],
+    "approvedVoters": [],
+    "ballots": [
+        {
+            "voter": "0x41D24527b10F7FC9EE06367126E12A01e5ca7806",
+            "encryptedVote": "3134343a313636"
+        }
+    ]
+}
